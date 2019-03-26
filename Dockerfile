@@ -9,9 +9,12 @@ build-essential \
 libtool \
 autotools-dev \
 automake \
-autoconf
+autoconf \
+htop zsh git-core
 
-ADD .tmux.conf .
+RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
+ADD .tmux.conf /home/biodocker/
 
 ADD https://github.com/singularityware/singularity/releases/download/2.4.6/singularity-2.4.6.tar.gz ./
 RUN tar xvzf singularity-2.4.6.tar.gz \
@@ -20,4 +23,6 @@ RUN tar xvzf singularity-2.4.6.tar.gz \
 && make \
 && make install
 
-#RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+RUN chsh -s `which zsh`
