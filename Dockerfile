@@ -23,6 +23,6 @@ RUN tar xvzf singularity-2.4.6.tar.gz \
 && make \
 && make install
 
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+#RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 
 RUN chsh -s `which zsh`
