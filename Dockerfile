@@ -2,7 +2,14 @@ FROM biocontainers/biocontainers:v1.0.0_cv4
 
 RUN apt-get update \
 && apt-get install -y tmux \
-&& squashfs-tools build-essential libtool autotools-dev automake autoconf
+squashfs-tools \
+build-essential \
+libtool \
+autotools-dev \
+automake \
+autoconf
+
+ADD .tmux.conf .
 
 ADD https://github.com/singularityware/singularity/releases/download/2.4.6/singularity-2.4.6.tar.gz ./
 RUN tar xvzf singularity-2.4.6.tar.gz \
