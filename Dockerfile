@@ -10,7 +10,7 @@ libtool \
 autotools-dev \
 automake \
 autoconf \
-htop zsh git-core
+htop zsh git-core ruby-full
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
@@ -23,5 +23,6 @@ RUN tar xvzf singularity-2.4.6.tar.gz \
 && make \
 && make install
 
-#RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
 CMD zsh
