@@ -8,6 +8,7 @@ software-properties-common \
 squashfs-tools \
 build-essential \
 libtool \
+silversearcher-ag \
 autotools-dev \
 automake \
 autoconf \
