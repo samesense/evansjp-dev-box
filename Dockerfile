@@ -173,9 +173,9 @@ RUN mkdir -p /usr/local/share/fonts \
     && rm -rf /tmp/* /var/lib/apt/lists/* /root/.cache/*
 
 USER biodocker
-ADD .spacemacs /home/biodocker/
-ADD .emacs.d /home/biodocker/
+#ADD .spacemacs /home/biodocker/
+#ADD .emacs.d /home/biodocker/
 
-#RUN git clone https://github.com/syl20bnr/spacemacs /home/biodocker/.emacs.d
+RUN git clone https://github.com/syl20bnr/spacemacs /home/biodocker/.emacs.d
 
 WORKDIR /data
