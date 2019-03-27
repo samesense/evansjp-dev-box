@@ -175,8 +175,10 @@ RUN mkdir -p /usr/local/share/fonts \
 USER biodocker
 ADD .spacemacs /home/biodocker/
 ADD .emacs.d /home/biodocker/.emacs.d
+USER ROOT
 RUN chown -R biodocker .emacs.d
 
+USER biodocker
 #RUN git clone https://github.com/syl20bnr/spacemacs /home/biodocker/.emacs.d
 
 ENV SINGULARITY_CACHEDIR /mnt/isilon/dbhi_bfx/perry/tmp/
