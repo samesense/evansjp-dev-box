@@ -175,6 +175,7 @@ RUN mkdir -p /usr/local/share/fonts \
 USER biodocker
 ADD .spacemacs /home/biodocker/
 ADD .emacs.d /home/biodocker/.emacs.d
+RUN chown -R biodocker .emacs.d
 
 #RUN git clone https://github.com/syl20bnr/spacemacs /home/biodocker/.emacs.d
 
