@@ -10,7 +10,7 @@ libtool \
 autotools-dev \
 automake \
 autoconf \
-htop zsh git-core ruby-full
+htop zsh git-core ruby-full fontconfig emacs25
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
@@ -54,4 +54,16 @@ RUN HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_AUTO_UPDATE=1 brew tap homebrew/core \
 CMD zsh
 RUN brew install fzf
 #RUN $(brew --prefix)/opt/fzf/install
+
 # spacemacs
+USER root
+ENV NNG_URL="https://github.com/google/fonts/raw/master/ofl/nanumgothic/NanumGothic-Regular.ttf" \
+    SCP_URL="https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.tar.gz"
+RUN mkdir -p /usr/local/share/fonts \
+    && wget -qO- "${SCP_URL}" | tar xz -C /usr/local/share/fonts \
+    && wget -q "${NNG_URL}" -P /usr/local/share/fonts \
+    && fc-cache -fv \
+    && rm -rf /tmp/* /var/lib/apt/lists/* /root/.cache/*
+
+USER biodocker
+RUN git clone https://github.com/syl20bnr/spacemacs /home/biodocker/.emacs.d
