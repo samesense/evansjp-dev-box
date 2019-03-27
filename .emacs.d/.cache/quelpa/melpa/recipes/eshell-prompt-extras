@@ -1,0 +1,2 @@
+(eshell-prompt-extras :fetcher github
+		      :repo "kaihaosw/eshell-prompt-extras")
