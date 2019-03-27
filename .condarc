@@ -2,4 +2,6 @@ channels:
   - defaults
   
 envs_dirs:
+  - /opt/conda/envs
+  - /home/biodocker/.conda/envs
   - /mnt/isilon/dbhi_bfx/perry/dev-conda-envs/
