@@ -15,6 +15,8 @@ htop zsh git-core ruby-full
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 ADD .tmux.conf /home/biodocker/
+ADD .condarc /home/biodocker/
+
 
 ADD https://github.com/singularityware/singularity/releases/download/2.4.6/singularity-2.4.6.tar.gz ./
 RUN tar xvzf singularity-2.4.6.tar.gz \
@@ -49,4 +51,4 @@ RUN HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_AUTO_UPDATE=1 brew tap homebrew/core \
 
 CMD zsh
 RUN brew install fzf
-RUN (brew --prefix)/opt/fzf/install
+RUN $(brew --prefix)/opt/fzf/install
