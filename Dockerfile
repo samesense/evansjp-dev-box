@@ -23,8 +23,7 @@ RUN tar xvzf singularity-2.4.6.tar.gz \
 && make \
 && make install
 
-RUN localedef -i en_US -f en_US.UTF-8 \
-	&& useradd -m -s /bin/bash evansj \
+RUN useradd -m -s /bin/bash evansj \
 	&& echo 'evansj ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
   
 RUN git clone https://github.com/Linuxbrew/brew
