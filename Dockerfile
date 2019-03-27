@@ -53,4 +53,5 @@ RUN HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_AUTO_UPDATE=1 brew tap homebrew/core \
 
 CMD zsh
 RUN brew install fzf
-RUN $(brew --prefix)/opt/fzf/install
+#RUN $(brew --prefix)/opt/fzf/install
+# spacemacs
