@@ -1,0 +1,5 @@
+channels:
+  - defaults
+  
+envs_dirs:
+  -  /mnt/isilon/dbhi_bfx/perry/dev-conda-envs/
