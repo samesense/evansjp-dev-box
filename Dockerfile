@@ -24,14 +24,13 @@ RUN tar xvzf singularity-2.4.6.tar.gz \
 && make install
 
 RUN useradd -m -s /bin/bash evansj \
-	&& echo 'evansj ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
-  
-RUN git clone https://github.com/Linuxbrew/brew
-RUN mv brew /home/biodocker/.linuxbrew/Homebrew
+	&& echo 'evansj ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN mkdir -p /home/biodocker/.linuxbrew/  
+RUN git clone https://github.com/Linuxbrew/brew && mv brew /home/biodocker/.linuxbrew/Homebrew
 RUN cd /home/biodocker/.linuxbrew \
 	&& mkdir -p bin etc include lib opt sbin share var/homebrew/linked Cellar \
 	&& ln -s ../Homebrew/bin/brew /home/biodocker/.linuxbrew/bin/ \
-	&& chown -R linuxbrew: /home/linuxbrew/.linuxbrew \
+	&& chown -R biodocker: /home/biodocker/.linuxbrew \
 	&& cd /home/biodocker/.linuxbrew/Homebrew \
 	&& git remote set-url origin https://github.com/Linuxbrew/brew
 
