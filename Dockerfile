@@ -27,6 +27,8 @@ RUN tar xvzf singularity-2.4.6.tar.gz \
 
 RUN useradd -m -s /bin/bash evansj \
 	&& echo 'evansj ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN echo 'biodocker ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
 RUN mkdir -p /home/biodocker/.linuxbrew/  
 RUN git clone https://github.com/Linuxbrew/brew && mv brew /home/biodocker/.linuxbrew/Homebrew
 RUN cd /home/biodocker/.linuxbrew \
