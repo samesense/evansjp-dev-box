@@ -10,7 +10,10 @@ libtool \
 autotools-dev \
 automake \
 autoconf \
-htop zsh git-core ruby-full fontconfig emacs25
+htop zsh git-core ruby-full fontconfig && \
+add-apt-repository ppa:kelleyk/emacs && \
+&& apt-get update && \
+apt install emacs26
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
