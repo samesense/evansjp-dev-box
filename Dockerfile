@@ -4,6 +4,7 @@ USER root
 
 RUN apt-get update && \
 apt-get install -y tmux \
+software-properties-common \
 squashfs-tools \
 build-essential \
 libtool \
