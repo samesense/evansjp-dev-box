@@ -23,7 +23,7 @@ RUN tar xvzf singularity-2.4.6.tar.gz \
 && make \
 && make install
 
-USER biocontainer
+USER biodocker
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 
 CMD zsh
