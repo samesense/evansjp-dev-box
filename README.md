@@ -11,3 +11,8 @@ I store conda envs in host directory `/mnt/isilon/dbhi_bfx/perry/dev-conda-envs/
 ```
 conda create -p /mnt/isilon/dbhi_bfx/perry/dev-conda-envs/cookie python=3.7
 ```
+
+### singularity cache
+
+### Modifications
+* UID
