@@ -1,9 +1,14 @@
 # evansjp-dev-box
 Dockerfile for development
 
-### Startup
+### Startup refosco
 ```
 docker run -it  --privileged=True --cap-add=SYS_ADMIN --detach-keys="ctrl-@" -v /mnt/isilon/:/mnt/isilon/ --user $(id -u) quay.research.chop.edu/evansj/evansj-dev-box zsh
+```
+
+### Startup mac
+```
+docker run -it  --privileged=True --cap-add=SYS_ADMIN --detach-keys="ctrl-@" -v /Users/perry/chop/isilon:/mnt/isilon/ --user $(id -u) quay.research.chop.edu/evansj/evansj-dev-box zsh
 ```
 
 ### Conda envs
